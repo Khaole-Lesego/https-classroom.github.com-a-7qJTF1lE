@@ -33,9 +33,36 @@ public class PROG5121POE { // Main class for the program, containing user regist
         
     
     
-   public boolean checkPasswordComplexity(){
-        
-        
+   // Method to check the complexity of the password.
+    public boolean checkPasswordComplexity() {
+        // Validates that the password has a minimum length of 8 characters.
+        if (password.length() < 8) {
+            System.out.println("Password is not correctly formatted.\nPlease ensure that the password contains:\nAt least eight characters\nA capital letter\nA number\nAnd a special character");
+            return false; // Returns false if password is too short.
+        }
+
+        // Flags to check password requirements.
+        boolean hasUpperCase = false; // Checks for at least one uppercase letter.
+        boolean hasDigit = false; // Checks for at least one digit.
+        boolean hasSpecialChar = false; // Checks for at least one special character.
+
+        // Iterates through each character in the password.
+        for (char ch : password.toCharArray()) {
+            // Updates flags based on character type.
+            if (Character.isUpperCase(ch)) hasUpperCase = true;
+            if (Character.isDigit(ch)) hasDigit = true;
+            if (!Character.isLetterOrDigit(ch)) hasSpecialChar = true;
+        }
+
+        // Validates all password requirements.
+        if (hasUpperCase && hasDigit && hasSpecialChar) {
+            System.out.println("Password successfully captured.");
+            return true; // Returns true if password is complex enough.
+        } else {
+            // Error message for insufficient password complexity.
+            System.out.println("Password is not correctly formatted;\nPlease ensure that the password contains:\nAt least eight characters,\tA capital letter, a number,\tAnd a special character.");
+            return false; // Returns false if password does not meet criteria.
+        }
     }
     
     boolean checkCellPhoneNumber(){
