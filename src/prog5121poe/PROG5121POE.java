@@ -108,8 +108,45 @@ public class PROG5121POE { // Main class for the program, containing user regist
     }
 
     
-    boolean loginUser(){
+     // Method to log in the user by checking credentials.
+    public boolean loginUser() {
+        String storedUsername = username; // Stores the username for login validation.
+        String storedPassword = password; // Stores the password for login validation.
+        Scanner input = new Scanner(System.in); // Creates a Scanner object for user input.
         
+        System.out.println("Loading...\nPlease enter registered credentials");
+        
+        String InputUserName; // Variable to hold user input for username.
+        String InputPassword; // Variable to hold user input for password.
+        
+        // Loop to validate username input for login.
+        do {
+            System.out.println("Please enter a registered username:");
+            InputUserName = input.nextLine(); // Reads username input from the user.
+            
+            // Checks if the entered username matches the stored username.
+            if (!InputUserName.equals(storedUsername)) {
+                System.out.println("Username Unknown"); // Error message for unknown username.
+            } else {
+                System.out.println("Username Found"); // Confirmation of found username.
+            }
+        } while (!InputUserName.equals(storedUsername)); // Continues until a valid username is entered.
+                
+        // Loop to validate password input for login.
+        do {
+            System.out.println("Please enter a registered password:");
+            InputPassword = input.nextLine(); // Reads password input from the user.
+            
+            // Checks if the entered password matches the stored password.
+            if (!InputPassword.equals(storedPassword)) {
+                System.out.println("Password incorrect"); // Error message for incorrect password.
+            } else {
+                System.out.println("Password Correct");
+                System.out.println("Checking Data Base"); // Confirmation of correct password.
+            }
+        } while (!InputPassword.equals(storedPassword)); // Continues until a valid password is entered.
+        
+        return true; // Returns true upon successful login.
     }
     
     String returnLoginStatus(){
