@@ -1,19 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package prog5121poe;
-import java.util.Scanner;
 
-/**
- *
- * @author leseg
- */
-public class PROG5121POE {
-    Scanner Input = new Scanner(System.in);
-    public String UserName;
-    public String Password = Input.nextLine();
-    public int CellPhoneNumber = Input.nextInt();
+ prog5121poe; // Defines the package name for organizing related classes.
+
+import java.util.Scanner; // Imports the Scanner class for user input handling.
+
+public class PROG5121POE { // Main class for the program, containing user registration and login functionalities.
+    
+    // Private variables to hold user information.
+    private String username; // Stores the username of the user.
+    private String password; // Stores the password of the user.
+    private String cellPhoneNumber; // Stores the cell phone number of the user.
+    private boolean isLoggedIn = false; // Tracks the login status of the user.
     
    
 
@@ -21,8 +17,7 @@ public class PROG5121POE {
     
     public boolean checkUserName(){
         
-        if (UserName.contains("_") && UserName.length() <=5;){
-          return true; 
+       
     }
         
         
@@ -30,7 +25,7 @@ public class PROG5121POE {
         
     }
     
-   /* boolean checkPasswordComplexity(){
+   boolean checkPasswordComplexity(){
         
         
     }
@@ -54,30 +49,7 @@ public class PROG5121POE {
     
     
     
-    public  boolean CheckUserName(String UserName, String Password, int CellPhoneNumber){
-      this.UserName = UserName;
-     this.Password = Password;    
-     this.CellPhoneNumber = CellPhoneNumber;   
-     return UserName.contains("_") && UserName.length() <=10;
-  
     
-for(int i = 0; i < Password.length(); i++){
-    if (Character.isUpperCase(Password.charAt(i)) 
-        && Character.isDigit(Password.charAt(i + 1))
-        && !Character.isLetterOrDigit(Password.charAt(i + 2))) { // Check for special character
-        return true;
-    }
-}
-
-     /*if(UserName.contains("_") && UserName.length() <= 5){
-    return true;
-     }else {
-     return false;
-     }
-      if(Password.isUpperCase() && Password.length() <= 8){
-    return true;
-     }else {
-     return false; */
      
 
 
