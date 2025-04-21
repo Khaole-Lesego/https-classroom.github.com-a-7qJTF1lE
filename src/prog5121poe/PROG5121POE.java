@@ -160,20 +160,13 @@ public class PROG5121POE { // Main class for the program, containing user regist
         }
     }
     
-    
-    
-    
-     
-
-
-
-    
-    
-    
-    
-    
+    // Main method to execute the program.
     public static void main(String[] args) {
-         
+        PROG5121POE user = new PROG5121POE(); // Creates an instance of the PROG5121POE class.
+
+        user.registerUser(); // Calls the method to register a new user.
+        System.out.println("Attempting Login...");
+        user.isLoggedIn = user.loginUser(); // Calls the method to log in the user and updates the login status.
+        System.out.println(user.returnLoginStatus()); // Displays the login status message.
     }
-    
 }
