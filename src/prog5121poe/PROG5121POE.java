@@ -65,8 +65,18 @@ public class PROG5121POE { // Main class for the program, containing user regist
         }
     }
     
-    boolean checkCellPhoneNumber(){
-        
+   // Method to validate the cell phone number format.
+    public boolean checkCellPhoneNumber() {
+        // Validates the cell phone number against the specified regex pattern for South African numbers "\\+27\\d{9}" or "^(\\+27\\d{9}|0\\d{9})$" as for international numbers it was "^\\+\\d{10,15}$".
+        //ChatGPT mainly helped with interpreting this part of the code.
+        if (cellPhoneNumber.matches("\\+27\\d{9}")) {
+            System.out.println("Cell phone number successfully added.");
+            return true; // Returns true if cell phone number is valid.
+        } else {
+            // Error message for invalid cell phone number format.
+            System.out.println("Cell phone number incorrectly formatted\nOr does not contain the international code(+27).");
+            return false; // Returns false if cell phone number is invalid.
+        }
     }
     
     String registerUser(){
