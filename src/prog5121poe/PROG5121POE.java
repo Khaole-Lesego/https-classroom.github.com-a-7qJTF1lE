@@ -79,8 +79,32 @@ public class PROG5121POE { // Main class for the program, containing user regist
         }
     }
     
-    String registerUser(){
+    // Method to register a new user by collecting input.
+    public void registerUser() {
+        Scanner scanner = new Scanner(System.in); // Creates a Scanner object for user input.
         
+        System.out.println("Welcome To Registrations!");
+
+        // Loop to validate username input.
+        do {
+            System.out.println("Please enter a valid username:");
+            username = scanner.nextLine(); // Reads username input from the user.
+        } while (!checkUserName()); // Continues until a valid username is entered.
+
+        // Loop to validate password input.
+        do {
+            System.out.println("Please enter a valid password:");
+            password = scanner.nextLine(); // Reads password input from the user.
+        } while (!checkPasswordComplexity()); // Continues until a valid password is entered.
+
+        // Loop to validate cell phone number input.
+        do {
+            System.out.println("Please enter a valid cell phone number:");
+            cellPhoneNumber = scanner.nextLine(); // Reads cell phone number input from the user.
+        } while (!checkCellPhoneNumber()); // Continues until a valid cell phone number is entered.
+        
+        // Confirmation of successful registration.
+        System.out.println("Registering a new user...\nRegistration successful!");
     }
 
     
