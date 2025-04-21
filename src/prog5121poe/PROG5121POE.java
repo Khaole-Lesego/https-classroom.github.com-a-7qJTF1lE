@@ -149,8 +149,15 @@ public class PROG5121POE { // Main class for the program, containing user regist
         return true; // Returns true upon successful login.
     }
     
-    String returnLoginStatus(){
-        
+    // Method to return the login status message based on the user's login state.
+    public String returnLoginStatus() {
+        System.out.println("Searching for User...");
+        // Returns a welcome message if the user is logged in, otherwise prompts to try again.
+        if (isLoggedIn) {
+            return "Welcome " + username + "; it's great to see you again.";
+        } else {
+            return "Username or password incorrect; please try again.";
+        }
     }
     
     
