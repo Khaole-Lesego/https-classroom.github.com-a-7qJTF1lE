@@ -15,17 +15,25 @@ public class PROG5121POE { // Main class for the program, containing user regist
 
 
     
-    public boolean checkUserName(){
-        
-       
+   // Method to check the validity of the username.
+    public boolean checkUserName() {
+        // Validates that the username contains an underscore and is no longer than 5 characters.
+        if (username.contains("_") && username.length() <= 5) {
+            System.out.println("Username successfully captured.");
+            return true; // Returns true if username is valid.
+        } else {
+            // Error message for invalid username format.
+            System.out.println("Username is not correctly formatted.\nPlease ensure that your username contains:\nAn underscore(_)\nAnd is no more than five characters in length.");
+            return false; // Returns false if username is invalid.
+        }
     }
         
         
         
         
-    }
     
-   boolean checkPasswordComplexity(){
+    
+   public boolean checkPasswordComplexity(){
         
         
     }
